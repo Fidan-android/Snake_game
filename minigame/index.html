@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link href="img/icon.png" rel="shortcut icon" />
+        <link href="css/main.css" rel="stylesheet" />
+        <title>Snake - игра змейка онлайн</title>
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <div class="header-main-page">
+                    <a href="index.html" class="logo">Snake</a>
+                </div>
+                <div class="menu">
+                    <nav>
+                        <ul>
+                            <li><a href="index.html">Главная</a></li>
+                            <li><a href="#" onclick="showAbout();">Об игре</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+        <section class="main-block" id="game-main-block">
+            <div class="container">
+                <canvas id="game" class="fieldGame" width="608" height="602"></canvas>
+                <div class="records">
+                    <h1>Рекорды</h1>
+                    <div class="list-records">
+                        <ul>
+                            <li>1. Дед: 90</li>
+                            <li>2. Дед: 89</li>
+                            <li>3. Дед: 88</li>
+                            <li>4. Дед: 87</li>
+                            <li>5. Дед: 86</li>
+                            <li>6. Дед: 85</li>
+                            <li>7. Дед: 84</li>
+                            <li>8. Дед: 83</li>
+                            <li>9. Дед: 82</li>
+                            <li>10. Дед: 81</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="settings">
+                    <div class="color">
+                        <p>Выберите цвет головы</p>
+                        <ul>
+                            <li><button id="blue" value="blue" class="but"></button></li>
+                            <li><button id="red" value="red" class="but"></button></li>
+                            <li><button id="yellow" value="yellow" class="but"></button></li>
+                            <li><button id="black" value="black" class="but"></button></li>
+                            <li><button id="purple" value="purple" class="but"></button></li>
+                            <li><button id="white" value="white" class="but"></button></li>
+                            <li><button id="green" value="green" class="but"></button></li>
+                        </ul>
+                    </div>
+                    <div class="color color-head">
+                        <p>Выберите цвет хвоста</p>
+                        <ul>
+                            <li><button id="blueTail" value="blue" class="butTail"></button></li>
+                            <li><button id="redTail" value="red" class="butTail"></button></li>
+                            <li><button id="yellowTail" value="yellow" class="butTail"></button></li>
+                            <li><button id="blackTail" value="black" class="butTail"></button></li>
+                            <li><button id="purpleTail" value="purple" class="butTail"></button></li>
+                            <li><button id="whiteTail" value="white" class="butTail"></button></li>
+                            <li><button id="greenTail" value="green" class="butTail"></button></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="description" id="about">
+            <div class="container">
+                <div class="introduction">
+                    Snake (Питон, Удав, Змейка и др.) — компьютерная игра, возникшая в середине или в конце 1970-х.<br>
+                    Игрок управляет длинным, тонким существом, напоминающим змею, которое ползает по плоскости
+                    (как правило, ограниченной стенками), собирая еду (или другие предметы), избегая столкновения с
+                    собственным хвостом и краями игрового поля. В некоторых вариантах на поле присутствуют
+                    дополнительные препятствия. Каждый раз, когда змея съедает кусок пищи, она становится длиннее, что
+                    постепенно усложняет игру. Игрок управляет направлением движения головы змеи
+                    (обычно 4 направления: вверх, вниз, влево, вправо), а хвост змеи движется следом.
+                    Игрок не может остановить движение змеи.
+                </div>
+                <div class="history">
+                    Первой игрой этого плана был игровой автомат Hustle, выпущенный фирмой Gremlin в 1977 году.
+                    Одна из первых реализаций (возможно, первая) на домашнем компьютере была сделана в 1979 году на
+                    компьютере TRS-80, автор F. Seger (Германия). Вскоре после неё вышла версия для Commodore VIC-20,
+                    под названием Worms. Микрокомпьютерная версия игры Hustle была выпущена Milton Bradley для
+                    компьютера TI-99/4A в 1980 году. Версии игры существовали и на многих советских компьютерах,
+                    например — на Радио 86РК.
+                    <br><br>
+                    В число известных вариантов змейки входит игра Nibbles, некоторое время входившая в комплект MS-DOS.
+                    Трёхмерная версия змейки существует для телефона Nokia N70 и последующих телефонов Nokia.
+                    Также она реализована на PC.
+                    <br><br>
+                    В настоящее время только для iOS существует более трёхсот вариантов игры
+                </div>
+                <div class="about_coders">
+                    <hr>DEVAPP © 2021<hr>
+                </div>
+            </div>
+        </section>
+
+        <div class="newRecord">
+            <div class="newRecord-bg">
+                <div class="newRecord-content" align="center">
+                    <h1>Поздравляем! <br>Вы поставили новый рекорд</h1>
+                    <p class="loseText">Игра окончена! Вы проиграли</p>
+                    <p>Ваш результат: </p>
+                    <button class="restart"  onclick="restartGame();">Сохранить и начать заново</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="fail" id="failWindow">
+            <div class="fail-bg">
+                <div class="fail-content" align="center">
+                    <h1>Игра окончена</h1>
+                    <p class="loseText">Вы проиграли!</p>
+                    <p>Ваш результат: <div id="userRecord" class="record-label"></div></p>
+                    <button class="restart" id="restartBut" onclick="restartGame();">Заново</button>
+                </div>
+            </div>
+        </div>
+
+        <script src="js/main.js"></script>
+        <script src="js/game.js"></script>
+    </body>
+</html>
